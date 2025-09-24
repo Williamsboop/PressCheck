@@ -88,7 +88,6 @@ python main.py
 - **data/**: Data utilities and import scripts.
 - **gui/**: GUI engine and related code.
 - **tesseract_engine/**: (Purpose not described—add details if needed.)
-- **.vscode/**: VS Code workspace settings.
 - **.gitignore, LICENSE, README.md, main.py**: Project config, license, docs, and entry point.
 
 
@@ -124,8 +123,6 @@ from lib import IMG
 img = IMG(Image.open('path/to/file.png'))
 print(img)
 ```
-
-Note: The repository contains a commit that mentions the IMG class and the package rename in its message for traceability.
 
 ### pytesseract License
 
