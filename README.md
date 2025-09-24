@@ -25,13 +25,16 @@ PressCheck
 |   |   Logo.png
 |   |   version_info.json
 |
-+---classesandmethods
-|   |   DOC.py
-|   |   FORMAT.py
-|   |   PARSER.py
-|   |   __init__.py
-|   
-| 
++---lib
+|   +---classes
+|   |   |   DOC.py
+|   |   |   IMG.py
+|   |   |   __init__.py
+|   +---methods
+|   |   |   FORMAT.py
+   |   |   PARSER.py
+   |   |   __init__.py
+|
 +---data
 |   |   imports.py
 |   |   __init__.py
@@ -74,7 +77,9 @@ python main.py
 
 ## Folder Descriptions
 - **assets/**: Icons, logo, and version information.
-- **classesandmethods/**: Core document, format, and parser logic (DOC, FORMAT, PARSER).
+- **lib/**: Package used by the application. Key subpackages:
+   - `lib.classes` - contains `DOC` (document model) and `IMG` (image wrapper) classes. You can import with `from lib.classes import DOC, IMG` or via the package root `from lib import DOC, IMG`.
+   - `lib.methods` - contains helper functions such as `TO_HTML`, `TO_IMGS`, and `PARSE_IMG`. Import with `from lib.methods import TO_HTML` or via the package root `from lib import TO_HTML`.
 - **data/**: Data utilities and import scripts.
 - **gui/**: GUI engine and related code.
 - **tesseract_engine/**: (Purpose not described—add details if needed.)
@@ -101,6 +106,21 @@ python main.py
 This project uses [pytesseract](https://github.com/madmaze/pytesseract) as a Python wrapper for Google's Tesseract-OCR Engine. You must have the Tesseract executable installed and available in your system PATH or specify its location in your code. For more information, see the [pytesseract documentation](https://pypi.org/project/pytesseract/).
 
 **Note:** The Tesseract-OCR Engine will be included in future releases of PressCheck for easier setup and use.
+
+## Recent changes
+
+- Renamed internal package from `class` to `classes` to avoid using the Python reserved word `class` in package paths. If you previously imported `lib.class`, update your imports to `lib.classes` or import from the package root (`from lib import DOC, IMG`).
+- Added `IMG` class: a small wrapper around Pillow `Image` objects that stores image metadata (name, size, DPI) and provides a readable string representation. Example:
+
+```python
+from PIL import Image
+from lib import IMG
+
+img = IMG(Image.open('path/to/file.png'))
+print(img)
+```
+
+Note: The repository contains a commit that mentions the IMG class and the package rename in its message for traceability.
 
 ### pytesseract License
 

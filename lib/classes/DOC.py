@@ -1,5 +1,5 @@
 from data import *
-from .FORMAT import TO_HTML, TO_IMGS
+from ..methods.FORMAT import TO_HTML, TO_IMGS
 
 @dataclass
 class DOC:

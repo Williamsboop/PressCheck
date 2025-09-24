@@ -19,4 +19,5 @@ __all__ = ['LOG',
            'FILTER',
            'TES_ENG_SETTR',
            'disable_parsing_logs',
+           'BASE_FILE',
 ]

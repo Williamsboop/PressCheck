@@ -1,5 +1,5 @@
 from data import *
-from classesandmethods import *
+from lib import *
 
 def main() -> int:
     
@@ -24,11 +24,14 @@ def main() -> int:
     # ad_text = parse_img("dev\\OCR Testing Images\\ad_A.png")
     # print(f"\nAd-A:\n\n{ad_text}\n")
     
+    
+    # IMG CLASS DEBUG #
 
-
-
-
-
+    try:
+        myImg = IMG(IMAGE.open(input("Enter path to image: ")))
+        print(myImg)
+    except Exception as e:
+        print(f"An error occurred: {e}")
 
 
 

@@ -15,6 +15,8 @@ LANCZOS = getattr(Image, "LANCZOS")
 IMAGE = Image
 ENHANCE = ImageEnhance
 FILTER = ImageFilter
+from os import path
+BASE_FILE = path.basename
 
 def disable_parsing_logs() -> None:
     getLogger('PIL.PngImagePlugin').disabled = True
@@ -42,4 +44,5 @@ __all__ = ['LOG',
            'FILTER',
            'TES_ENG_SETTR',
            'disable_parsing_logs',
+           'BASE_FILE',
 ]
