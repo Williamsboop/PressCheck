@@ -1,0 +1,4 @@
+customtkinter
+screeninfo
+pytesseract
+Pillow
