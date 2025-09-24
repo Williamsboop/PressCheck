@@ -70,12 +70,18 @@ python main.py
 - **gui/**: GUI code for the application.
 
 
-## Future Plans
 
-- **User-Configurable Parsing:** Users will be able to designate parsing details for specific PDFs via user-configurable JSON files, allowing for flexible and tailored document processing.
-- **Upload to Repositories:** Users will be able to upload completed files to designated repositories, including both local and cloud storage. Initial cloud support will focus on Google Drive, with the possibility of adding more services in the future.
-- **Webscraping for PDF Downloads:** Users will be able to specify websites or servers from which PDFs can be downloaded directly through the application's webscraping capabilities.
-- **SmartPublisher API Support:** If available, SmartPublisher API integration would allow for automatic Runsheet acquisition, streamlining the document collection process.
+## TODO / Ideas
+
+- [ ] User-configurable parsing for PDFs (via JSON files)
+- [ ] Upload completed files to repositories (local & cloud, e.g., Google Drive)
+- [ ] Webscraping for PDF downloads from user-specified sources
+- [ ] SmartPublisher API integration for automatic Runsheet acquisition
+- [ ] Add user authentication and permissions
+- [ ] Batch processing of documents
+- [ ] Enhanced error handling and logging
+- [ ] Export reports in multiple formats (PDF, CSV, etc.)
+- [ ] Improved UI/UX and theming options
 
 ## Author
 

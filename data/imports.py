@@ -9,7 +9,19 @@ from subprocess import run as RUN
 from dataclasses import dataclass, field
 basicConfig(level=DEBUG)
 LOG = getLogger(f" {__name__} ")
-from easyocr import Reader as GET_TEXT
+from pytesseract import image_to_string, pytesseract, TesseractNotFoundError
+from PIL import Image, ImageEnhance, ImageFilter
+LANCZOS = getattr(Image, "LANCZOS")
+IMAGE = Image
+ENHANCE = ImageEnhance
+FILTER = ImageFilter
+
+def disable_parsing_logs() -> None:
+    getLogger('PIL.PngImagePlugin').disabled = True
+    getLogger('pytesseract').disabled = True
+
+def TES_ENG_SETTR(path: str) -> None:
+    pytesseract.tesseract_cmd = path
 
 __all__ = ['LOG',
            'dataclass',
@@ -22,5 +34,12 @@ __all__ = ['LOG',
            'ctypes', 
            'load', 
            'RUN',
-            'GET_TEXT',
+           'image_to_string',
+           'TesseractNotFoundError',
+           'LANCZOS',
+           'IMAGE',
+           'ENHANCE',
+           'FILTER',
+           'TES_ENG_SETTR',
+           'disable_parsing_logs',
 ]

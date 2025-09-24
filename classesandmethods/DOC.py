@@ -1,4 +1,4 @@
-from data.imports import *
+from data import *
 from .FORMAT import TO_HTML, TO_IMGS
 
 @dataclass
