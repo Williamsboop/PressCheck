@@ -19,30 +19,35 @@ PressCheck
 |   LICENSE
 |   main.py
 |   README.md
-|
+|   requirements.txt
+|   
 +---assets
-|   |   Logo.ico
-|   |   Logo.png
-|   |   version_info.json
+|       Logo.ico
+|       Logo.png
+|       version_info.json
+|       
++---data
+|       imports.py
+|       __init__.py
+|    
++---gui
+|       engine.py
+|       __init__.py
+|  
 |
 +---lib
+|   |   __init__.py
+|   |
 |   +---classes
-|   |   |   DOC.py
-|   |   |   IMG.py
-|   |   |   __init__.py
-|   +---methods
-|   |   |   FORMAT.py
-   |   |   PARSER.py
-   |   |   __init__.py
-|
-+---data
-|   |   imports.py
-|   |   __init__.py
-|
-+---gui
-|   |   engine.py
-|   |   __init__.py
-|
+|   |       DOC.py
+|   |       IMG.py
+|   |       __init__.py
+|   |
+|   \---methods
+|           FORMAT.py
+|           PARSER.py
+|           __init__.py
+|   
 \---tesseract_engine
 ```
 
