@@ -15,23 +15,32 @@ PressCheck is a Python application designed to help you manage and verify docume
 ## Project Structure
 ```
 PressCheck
+|   .gitignore
+|   LICENSE
 |   main.py
+|   README.md
 |
 +---assets
-|       version_info.json
+|   |   Logo.ico
+|   |   Logo.png
+|   |   version_info.json
 |
-+---classes
-|       DOC.py
-|       FORMAT.py
-|       __init__.py
-|
++---classesandmethods
+|   |   DOC.py
+|   |   FORMAT.py
+|   |   PARSER.py
+|   |   __init__.py
+|   
+| 
 +---data
-|       imports.py
-|       __init__.py
+|   |   imports.py
+|   |   __init__.py
 |
-\---gui
-        pressCheck.py
-        __init__.py
++---gui
+|   |   engine.py
+|   |   __init__.py
+|
+\---tesseract_engine
 ```
 
 ## Getting Started
@@ -62,12 +71,15 @@ Run the main script:
 python main.py
 ```
 
+
 ## Folder Descriptions
-- **assets/**: Contains icons and version information.
-- **classes/**: Python modules for document and format logic.
+- **assets/**: Icons, logo, and version information.
+- **classesandmethods/**: Core document, format, and parser logic (DOC, FORMAT, PARSER).
 - **data/**: Data utilities and import scripts.
-- **documents/**: Place your documents here. Use `checked/` and `unchecked/` for organization.
-- **gui/**: GUI code for the application.
+- **gui/**: GUI engine and related code.
+- **tesseract_engine/**: (Purpose not described—add details if needed.)
+- **.vscode/**: VS Code workspace settings.
+- **.gitignore, LICENSE, README.md, main.py**: Project config, license, docs, and entry point.
 
 
 
