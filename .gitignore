@@ -1,0 +1,9 @@
+.py[cod]
+.log
+.spec
+**/.vscode/
+**/__pycache__/
+**/dev/
+**/__pyinstaller__/
+**/build/
+**/dist/
