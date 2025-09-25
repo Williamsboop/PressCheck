@@ -1,23 +1,39 @@
 from data import *
-from ..methods.FORMAT import TO_HTML, TO_IMGS
+from ..methods import *
 
-@dataclass
 class DOC:
-    type: str # Newspaper, Runsheet, Supplement, Etc.
-    name: str # Ex. 'DEE_9_18_25.pdf'
-    pages_as_html: dict = field(init=False) # Holds each page as html.
-    pages_as_imgs: dict = field(init=False) # Holds each page as an image.
+    def __init__(self, name: str, type: str) -> None:
+        self.__name: str = name # Ex. 'Publication_9_18_25.pdf' 
+        self.__type: str = type # Newspaper, Runsheet, Supplement, Etc.
+        self.__pdf: PDF = PDF(self.__name)
+        self.__html_blocks: dict = {} # Holds each page as html.
+        self.__imgs: dict = {} # Holds each page as an image.
 
-    def __post_init__(self) -> None:
-        self.type = self.type.lower()
-        self.name = f"{self.name.upper()}.pdf"
-        match self.type:
+        match self.__type:
             case "runsheet":
-                self.pages_as_html = TO_HTML(self.name)
-            case "newspaper":
-                self.pages_as_html = TO_HTML(self.name)
-                self.pages_as_imgs = TO_IMGS(self.name)
-            case "supplement":
-                self.pages_as_imgs = TO_IMGS(self.name)
+                self.__html_blocks = TO_HTML(self.__pdf)
+            case "newspaper" | "supplemental":
+                self.__html_blocks = TO_HTML(self.__pdf)
+                self.__imgs = TO_IMGS(self.__pdf)
             case _:
-                LOG.debug(f"Error: {self.type} is not a valid document type.")
+                LOG.debug(f"Error: {self.__type} is not a valid document type.")
+    
+    @property
+    def name(self) -> str:
+        return self.__name
+                
+    @property
+    def type(self) -> str:
+        return self.__type
+                
+    @property
+    def pdf(self) -> PDF:
+        return self.__pdf
+                
+    @property
+    def html_blocks(self) -> dict:
+        return self.__html_blocks
+    
+    @property
+    def imgs(self) -> dict:
+        return self.__imgs

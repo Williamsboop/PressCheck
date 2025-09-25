@@ -1,6 +1,6 @@
 from data import *
 
-def PARSE_IMG(path: str) -> str:
+def READ_IMG(path: str) -> str:
     TES_ENG_SETTR('tesseract_engine\\tesseract.exe')
     try:
         return image_to_string(path)

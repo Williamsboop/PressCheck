@@ -1,33 +1,35 @@
 from logging import basicConfig, DEBUG, getLogger
 from typing import Any
 import customtkinter as gui
-CTk = gui.CTk
 from screeninfo import get_monitors, Monitor
 import ctypes
 from json import load
 from subprocess import run as RUN
-from dataclasses import dataclass, field
-basicConfig(level=DEBUG)
-LOG = getLogger(f" {__name__} ")
 from pytesseract import image_to_string, pytesseract, TesseractNotFoundError
-from PIL import Image, ImageEnhance, ImageFilter
+from PIL import Image, ImageEnhance, ImageFilter, ImageDraw
+from os import path
+from fitz import open
+
+CTk = gui.CTk
 LANCZOS = getattr(Image, "LANCZOS")
 IMAGE = Image
 ENHANCE = ImageEnhance
 FILTER = ImageFilter
-from os import path
+DRAW = ImageDraw
+PATH = path
 BASE_FILE = path.basename
+basicConfig(level=DEBUG)
+LOG = getLogger(f" {__name__} ")
+PDF = open
 
 def disable_parsing_logs() -> None:
-    getLogger('PIL.PngImagePlugin').disabled = True
-    getLogger('pytesseract').disabled = True
+    getLogger('PIL').setLevel('ERROR')
+    getLogger('pytesseract').setLevel('ERROR')
 
 def TES_ENG_SETTR(path: str) -> None:
     pytesseract.tesseract_cmd = path
 
 __all__ = ['LOG',
-           'dataclass',
-           'field',
            'Any',
            'gui', 
            'CTk', 
@@ -44,5 +46,7 @@ __all__ = ['LOG',
            'FILTER',
            'TES_ENG_SETTR',
            'disable_parsing_logs',
+           'PATH',
            'BASE_FILE',
+           'PDF',
 ]

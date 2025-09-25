@@ -2,6 +2,7 @@ from data import *
 from lib import *
 
 def main() -> int:
+    disable_parsing_logs()
     
     
     # # GUI DEBUG #
@@ -16,22 +17,20 @@ def main() -> int:
 
 
     # # GETTING TEXT FROM IMAGES TESTING #
-    # disable_parsing_logs()
     # print("\n\n[ NOT ENHANCED ]\n\n")
-    # full_res_text = parse_img("dev\\OCR Testing Images\\full_res.png")
+    # full_res_text = READ_IMG("dev\\OCR Testing Images\\full_res.png")
     # print(f"\nFull Resolution:\n\n{full_res_text}\n")
     
-    # ad_text = parse_img("dev\\OCR Testing Images\\ad_A.png")
+    # ad_text = READ_IMG("dev\\OCR Testing Images\\ad_A.png")
     # print(f"\nAd-A:\n\n{ad_text}\n")
     
     
-    # IMG CLASS DEBUG #
-
-    try:
-        myImg = IMG(IMAGE.open(input("Enter path to image: ")))
-        print(myImg)
-    except Exception as e:
-        print(f"An error occurred: {e}")
+    # # IMG CLASS DEBUG #
+    # try:
+    #     myImg = IMG(IMAGE.open(input("Enter path to image: ")))
+    #     print(myImg)
+    # except Exception as e:
+    #     print(f"An error occurred: {e}")
 
 
 

@@ -1,4 +1,5 @@
 from data import *
+from assets import *
 
 # Set overall app cosmetics.
 gui.set_appearance_mode('system')
@@ -19,16 +20,16 @@ def get_geometry() -> str:
 
 # Get app details from .json file.
 app_info: dict = {}
-with open("assets/version_info.json", 'r') as file:
+with open(VERSION_INFO, 'r') as file:
     app_info = load(file)
 
 # Setup the main window of PressCheck and add logo to window header.
 pressCheck.geometry(get_geometry())
 pressCheck.title(f"{app_info['name']} | {app_info['version']}")
-pressCheck.iconbitmap("assets/Logo.ico")
+pressCheck.iconbitmap(ICO_LOGO)
 
 # Change the logo of the app in the taskbar.
-ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID("presschecker")
+ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID("presscheck")
 
 # Run the app mainloop.
 pressCheck.mainloop()
