@@ -9,6 +9,8 @@ from pytesseract import image_to_string, pytesseract, TesseractNotFoundError
 from PIL import Image, ImageEnhance, ImageFilter, ImageDraw
 from os import path
 from fitz import open
+from bs4 import BeautifulSoup
+from bs4.element import Tag
 
 CTk = gui.CTk
 LANCZOS = getattr(Image, "LANCZOS")
@@ -21,6 +23,8 @@ BASE_FILE = path.basename
 basicConfig(level=DEBUG)
 LOG = getLogger(f" {__name__} ")
 PDF = open
+HTML_  = BeautifulSoup
+HTML_TAG = Tag
 
 def disable_parsing_logs() -> None:
     getLogger('PIL').setLevel('ERROR')
@@ -49,4 +53,6 @@ __all__ = ['LOG',
            'PATH',
            'BASE_FILE',
            'PDF',
+           'HTML_',
+           'HTML_TAG',
 ]

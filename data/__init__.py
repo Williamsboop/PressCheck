@@ -20,4 +20,6 @@ __all__ = ['LOG',
            'PATH',
            'BASE_FILE',
            'PDF',
+           'HTML_',
+           'HTML_TAG',
 ]

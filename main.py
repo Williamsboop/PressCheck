@@ -31,6 +31,10 @@ def main() -> int:
     #     print(myImg)
     # except Exception as e:
     #     print(f"An error occurred: {e}")
+    
+    
+    # DOC CLASS DEBUG #
+    myDoc = DOC("dev\\pdfs\\runsheet.pdf", "Runsheet")
 
 
 
