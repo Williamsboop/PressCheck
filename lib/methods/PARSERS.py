@@ -2,7 +2,7 @@
 from data import *
 
 # HTML dict will be formatte as such: 'pdfname_i(nth)' : [page_num, html_code, extracted_text]
-def TO_HTML(name: str, pdf: PDF) -> dict:
+def EXTRACT_HTML_DATA(name: str, pdf: PDF) -> dict:
     html: str = ""
     
     try:
@@ -17,7 +17,7 @@ def TO_HTML(name: str, pdf: PDF) -> dict:
         
         # parsable_html = flatten_html(parsable_html)
         
-        DEBUG_createHTML(name, str(_html_.prettify()))
+        DEBUG___CREATE_HTML(name, str(_html_.prettify()))
     
     except Exception as e:
         print(e)
@@ -47,14 +47,57 @@ def format_styles(tag: HTML_TAG):
     else:
         del tag.attrs['style']
 
-# Img dict will be formatte as such: 'img_name' : [page_num, img_size, extracted_text]
-def TO_IMGS(name: str, pdf: PDF) -> dict:
-    return {}
 
-def DEBUG_createHTML(name: str, html: str) -> None:
+
+
+
+
+
+
+
+
+
+
+
+
+def DEBUG___CREATE_HTML(name: str, html: str) -> None:
     
     LOG.debug(f"Creating HTML for {name.rsplit('.', 1)[0]}.html ...")
     
-    out_path = "dev\\html"
+    out_path = "dev\\documents\\html"
     with open(out_path + f"\\{name.rsplit('.', 1)[0]}.html", "w", encoding="utf-8") as file:
         file.write(html)
+        
+
+
+
+
+
+def READ_IMG(path: str) -> str:
+    TES_ENG_SETTR('tesseract_engine\\tesseract.exe')
+    try:
+        return image_to_string(path)
+    except TesseractNotFoundError:
+        return "Tesseract executable not found. Please ensure it's installed and the path is correct."
+    except Exception as e:
+        return f"An error occurred: {e}"
+    
+
+
+
+
+
+
+
+
+def EXTRACT_IMAGE_DATA(pdf: PDF) -> dict: # imgsData: dict = {img-nth : [IMAGE.Image, text_from_image]}
+    
+    imgs: list[IMAGE.Image] = []
+    text: list[str] = []
+    
+    for page in pdf:
+        print(page)
+    
+    
+    
+    return {}

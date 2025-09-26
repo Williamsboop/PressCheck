@@ -1,9 +1,8 @@
 from .classes import DOC, IMG
-from .methods import TO_HTML, TO_IMGS, READ_IMG
+from .methods import EXTRACT_HTML_DATA, EXTRACT_IMAGE_DATA
 
 __all__ = ["DOC",
            "IMG",
-           "TO_HTML", 
-           "TO_IMGS", 
-           "READ_IMG",
+           "EXTRACT_HTML_DATA",
+           "EXTRACT_IMAGE_DATA",
 ]

@@ -1,7 +1,5 @@
-from .FORMAT import TO_HTML, TO_IMGS
-from .PARSER import READ_IMG
+from .PARSERS import EXTRACT_HTML_DATA, EXTRACT_IMAGE_DATA
 
-__all__ = ["TO_HTML", 
-           "TO_IMGS",
-           "READ_IMG",
+__all__ = ["EXTRACT_HTML_DATA",
+           "EXTRACT_IMAGE_DATA",
 ]

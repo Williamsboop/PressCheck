@@ -34,7 +34,8 @@ def main() -> int:
     
     
     # DOC CLASS DEBUG #
-    myDoc = DOC("dev\\pdfs\\runsheet.pdf", "Runsheet")
+    
+    myDoc = DOC(f"dev\\documents\\pdfs\\{input("Enter name of document: ")}", input("Enter docoument type: "))
 
 
 
