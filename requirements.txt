@@ -2,3 +2,5 @@ customtkinter
 screeninfo
 pytesseract
 Pillow
+PyMuPDF
+beautifulsoup4
